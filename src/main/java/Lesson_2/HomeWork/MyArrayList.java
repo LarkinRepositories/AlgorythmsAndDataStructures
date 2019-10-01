@@ -59,32 +59,12 @@ public class MyArrayList<T extends Comparable> {
     }
 
 
-
     public void bubbleSort() {
         for (int i = 0; i < list.length; i++) {
             for (int j = list.length-1; j > i; j--) {
 
             }
         }
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder s = new StringBuilder();
-        for (int i = 0; i < list.length; i++) {
-            s.append(list[i]+" ");
-        }
-        return s.toString();
-    }
-
-    private boolean less(T item1, T item2) {
-        return item1.compareTo(item2) < 0;
-    }
-
-    private void swap(int index1, int index2) {
-        T temp = list[index1];
-        list[index1] = list[index2];
-        list[index2] = temp;
     }
 
     public void selectionSort() {
@@ -127,6 +107,25 @@ public class MyArrayList<T extends Comparable> {
                 break;
             }
         }
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder s = new StringBuilder();
+        for (int i = 0; i < list.length; i++) {
+            s.append(list[i]+" ");
+        }
+        return s.toString();
+    }
+
+    private boolean less(T item1, T item2) {
+        return item1.compareTo(item2) < 0;
+    }
+
+    private void swap(int index1, int index2) {
+        T temp = list[index1];
+        list[index1] = list[index2];
+        list[index2] = temp;
     }
 
 }
