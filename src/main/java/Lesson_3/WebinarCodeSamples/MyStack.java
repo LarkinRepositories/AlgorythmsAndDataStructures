@@ -33,18 +33,23 @@ public class MyStack<T> {
        return this.list.size() == 0;
     }
 
-    public T pop(T element) {
-        if (list != null && this.list.contains(element)) {
-            T temp = list.get(list.indexOf(element));
-            list.remove(element);
-            return temp;
-        }
-        return null;
+    public T pop() {
+       if (list !=null) {
+           T temp = list.get(list.size()-1);
+           list.remove(list.get(list.size()-1));
+           return temp;
+       }
+       else throw new NullPointerException();
     }
 
     public void push(T element) {
         if (list !=null && !this.isFull()) this.list.add(element);
         else throw new StackOverflowError();
+    }
+
+    public T peek() {
+        if (list != null)  return list.get(list.size()-1);
+        else throw new NullPointerException();
     }
 
     @Override

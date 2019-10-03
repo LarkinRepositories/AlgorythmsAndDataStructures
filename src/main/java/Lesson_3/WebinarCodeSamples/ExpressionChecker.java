@@ -25,4 +25,10 @@ public class ExpressionChecker {
         }
         return stack.isEmpty();
     }
+
+    public static String reverseExpression(String expression) {
+        return String.valueOf(new StringBuffer(expression).reverse());
+    }
+
+
 }
