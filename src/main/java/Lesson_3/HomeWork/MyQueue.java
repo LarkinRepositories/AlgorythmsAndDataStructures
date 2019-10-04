@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Objects;
 
 
+
+
 public class MyQueue<T> {
     private ArrayList<T> list = null;
     private final int DEFAULT_CAPACITY = 10;
@@ -47,8 +49,8 @@ public class MyQueue<T> {
     }
 
     public void insert(T element) {
-        if (list !=null && !this.isFull()) this.list.add(element);
-        else throw new StackOverflowError();
+        if (isFull()) throw new StackOverflowError();
+        list.add(element);
     }
 
     public T peekFront() {

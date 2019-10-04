@@ -22,8 +22,8 @@ public class MyDeque<T> extends MyQueue {
     }
 
     public void insertFront(T item) {
-        if (this.list !=null) this.list.add(0, item);
-        else throw new NullPointerException();
+        if (isFull()) throw new StackOverflowError();
+        list.add(item);
     }
 
     public void removeFront() {
