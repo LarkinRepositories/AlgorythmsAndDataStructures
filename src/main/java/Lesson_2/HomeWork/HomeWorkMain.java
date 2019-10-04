@@ -8,7 +8,7 @@ package Lesson_2.HomeWork;
  */
 public class HomeWorkMain {
     public static void main(String[] args) {
-        MyArrayList<Integer> list = new MyArrayList<>(1000000);
+        MyArrayList<Integer> list = new MyArrayList<>(100000);
         for (int i = 0; i < list.size(); i++) {
             list.add((int) (Math.random() * 100));
         }
