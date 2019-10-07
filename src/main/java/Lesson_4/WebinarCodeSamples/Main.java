@@ -1,22 +1,34 @@
 package Lesson_4.WebinarCodeSamples;
 
-
+//аннотация логгера, просто для теста
+//@Slf4j
 public class Main {
     public static void main(String[] args) {
+//        MyOneSidedLinkedList<String> myOneSidedLinkedList = new MyOneSidedLinkedList<>();
+//        myOneSidedLinkedList.add("First");
+//        myOneSidedLinkedList.add("Second");
+//        System.out.println(myOneSidedLinkedList.getFirstElement());
+//        System.out.println(myOneSidedLinkedList.toString());
+//        try {
+//            myOneSidedLinkedList.remove();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        System.out.println(myOneSidedLinkedList.toString());
+//        myOneSidedLinkedList.add(1, "new Second");
+//        System.out.println(myOneSidedLinkedList.toString());
+//        myOneSidedLinkedList.add(0, "new First");
+//        System.out.println(myOneSidedLinkedList.toString());
+//        try {
+//            myOneSidedLinkedList.remove("Second");
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        System.out.println(myOneSidedLinkedList.contains("new First"));
+//        System.out.println(myOneSidedLinkedList.toString());
         MyLinkedList<String> myLinkedList = new MyLinkedList<>();
         myLinkedList.add("First");
-        myLinkedList.add("Second");
-        System.out.println(myLinkedList.getFirstElement());
-        System.out.println(myLinkedList.toString());
-        try {
-            myLinkedList.remove();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        System.out.println(myLinkedList.toString());
-        myLinkedList.add(1, "new Second");
-        System.out.println(myLinkedList.toString());
-        myLinkedList.add(0, "new First");
+        //myLinkedList.add("Second");
         System.out.println(myLinkedList.toString());
     }
 
