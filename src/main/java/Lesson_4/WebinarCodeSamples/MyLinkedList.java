@@ -1,15 +1,11 @@
 package Lesson_4.WebinarCodeSamples;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 import lombok.ToString;
 
-@Getter @ToString
+@ToString
 public class MyLinkedList<T> {
-    @Setter
     private Node first = null;
-    @Setter
     private Node last = null;
     private int size = 0;
 
