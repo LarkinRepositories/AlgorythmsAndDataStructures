@@ -1,12 +1,5 @@
 package Lesson_3.HomeWork;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
-
-
 public class Main {
 
     public static void main(String[] args) {
@@ -22,18 +15,17 @@ public class Main {
 //        System.out.println(myQueue);
 //        System.out.println(myQueue.remove());
 //        System.out.println(myQueue);
-        MyDeque<Integer> myDeque = new MyDeque<>(15);
-        myDeque.insertFront(5);
-        myDeque.insertFront(19);
-        myDeque.insertFront(1);
-        System.out.println(myDeque.peekFront());
-        System.out.println(myDeque.peekLast());
-        System.out.println(myDeque.isFull());
-        System.out.println(myDeque);
-//        List<Integer> list = new ArrayList<>();
-//        list.add(1);
-//        list.add(0,5);
-//        System.out.println(list);
+//        MyDeque<Integer> myDeque = new MyDeque<>(15);
+//        myDeque.insertFront(5);
+//        myDeque.insertFront(19);
+//        myDeque.insertFront(1);
+//        System.out.println(myDeque.peekFront());
+//        System.out.println(myDeque.peekLast());
+//        System.out.println(myDeque.isFull());
+//        System.out.println(myDeque);
+
+
+
         //скобочная последовательность
         System.out.println(ExpressionWorker.getInstance().checkBrackets("{}{P{P{}}}}[[[]"));
     }
