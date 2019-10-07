@@ -1,11 +1,10 @@
-package Lesson_3.WebinarCodeSamples;
+package Lesson_3.HomeWork;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 public class MyStack<T> {
-    private List<T> list = null;
+    private ArrayList<T> list = null;
     private int capacity;
     private final int DEFAULT_CAPACITY = 10;
 
@@ -37,6 +36,7 @@ public class MyStack<T> {
        if (list !=null) {
            T temp = list.get(list.size()-1);
            list.remove(list.get(list.size()-1));
+           list.trimToSize();
            return temp;
        }
        else throw new NullPointerException();
