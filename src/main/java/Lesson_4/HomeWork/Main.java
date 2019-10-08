@@ -1,4 +1,4 @@
-package Lesson_4.WebinarCodeSamples;
+package Lesson_4.HomeWork;
 
 //аннотация логгера, просто для теста
 //@Slf4j
@@ -27,8 +27,16 @@ public class Main {
 //        System.out.println(myOneSidedLinkedList.contains("new First"));
 //        System.out.println(myOneSidedLinkedList.toString());
         MyLinkedList<String> myLinkedList = new MyLinkedList<>();
-        myLinkedList.add("First");
-        //myLinkedList.add("Second");
+        myLinkedList.addFirst("First");
+        myLinkedList.addLast("Second");
+        myLinkedList.addLast("Third");
+//        myLinkedList.removeFirst();
+//        System.out.println(myLinkedList.getFirst());
+//        System.out.println(myLinkedList.getLast());
+//        System.out.println(myLinkedList.toString());
+//        myLinkedList.removeLast();
+        myLinkedList.add(2, "new Second");
+        myLinkedList.remove("Second");
         System.out.println(myLinkedList.toString());
     }
 
