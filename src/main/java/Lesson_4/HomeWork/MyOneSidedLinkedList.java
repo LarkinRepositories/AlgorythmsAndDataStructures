@@ -1,4 +1,4 @@
-package Lesson_4.WebinarCodeSamples;
+package Lesson_4.HomeWork;
 
 import lombok.*;
 
