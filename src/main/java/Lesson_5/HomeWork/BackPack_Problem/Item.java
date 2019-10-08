@@ -1,8 +1,4 @@
-package Lesson_5.HomeWork.Backpack_Problem;
-
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
-
+package Lesson_5.HomeWork.BackPack_Problem;
 
 public class Item {
     private double price;

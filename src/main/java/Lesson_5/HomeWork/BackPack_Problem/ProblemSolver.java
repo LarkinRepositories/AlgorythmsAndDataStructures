@@ -1,9 +1,7 @@
-package Lesson_5.HomeWork.Backpack_Problem;
+package Lesson_5.HomeWork.BackPack_Problem;
 
 
-import Lesson_3.HomeWork.ExpressionWorker;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.IntStream;
