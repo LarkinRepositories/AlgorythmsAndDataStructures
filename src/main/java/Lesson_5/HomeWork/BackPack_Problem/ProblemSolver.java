@@ -31,4 +31,23 @@ public class ProblemSolver {
                 .toArray(Item[]::new);
         return Arrays.asList(items);
     }
+
+    public Item[] generateItems() {
+        final int ITEMS_COUNT = (int) (Math.random() * 100);
+        Item[] items = IntStream.range(0, ITEMS_COUNT)
+                .mapToObj(obj -> new Item(Math.random() * 1500, (int) (Math.random() * 80)))
+                .toArray(Item[]::new);
+        return items;
+    }
+
+    private Item[] qSort(Item[] items) {
+        if (items.length < 2) return items;
+        return null;
+    }
+
+
+    public int solveBackPackProblem(BackPack backPack, List<Item> list) {
+        //сортируем
+        return 0;
+    }
 }
