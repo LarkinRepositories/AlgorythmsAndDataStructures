@@ -25,38 +25,37 @@ public class ProblemSolver {
     public List generateItemList(int itemsCount, double itemMaxPrice, int itemMaxWeight) {
         List<Item> items = new ArrayList<>();
         for (int i = 0; i < itemsCount; i++) {
-            items.add(new Item((int) (Math.random() * itemMaxPrice) , (int) (Math.random() * itemMaxWeight)));
+            items.add(new Item((int) (Math.random() * itemMaxPrice) + 1, (int) (Math.random() * itemMaxWeight)+ 1));
         }
         return items;
     }
 
-    public List solveKnapSackProblem(List<Item> items, int knapSackWeight) {
-        List<Item> itemsToGrab = new ArrayList<>();
-        int bestPrice = calculatePrice(items);
-//        for (int i = 0; i < items.size(); i++) {
-//            if (calculateWeight(items) <= knapSackWeight) {
-//                itemsToGrab.add(items.get(i));
-//            }
-        if (items.size() == 0) return itemsToGrab;
-        if (calculateWeight(items) <= knapSackWeight && calculatePrice(items) > bestPrice) {
-            itemsToGrab = items;
-            bestPrice = calculatePrice(items);
-        }
-        solveKnapSackProblem(items.subList(0, items.size()-1), knapSackWeight);
-        return itemsToGrab;
+    public List solve(List<Item> items, int knapSackWeight) {
+        items.sort(Item::compareTo);
+        if (calculateWeight(items) <= knapSackWeight) return items;
+        return solve(items.subList(1, items.size()), knapSackWeight);
     }
+
+
+
 
 
     private int calculateWeight(List<Item> items) {
-        AtomicInteger totalWeight = new AtomicInteger();
-        items.forEach(item -> totalWeight.addAndGet(item.getWeight()));
-        return totalWeight.intValue();
+//        AtomicInteger totalWeight = new AtomicInteger();
+//        items.forEach(item -> totalWeight.addAndGet(item.getWeight()));
+//        return totalWeight.intValue();
+        int totalWeight = 0;
+        for (Item item: items) totalWeight += item.getWeight();
+        return totalWeight;
     }
 
     private int calculatePrice(List<Item> items) {
-        AtomicInteger totalPrice = new AtomicInteger();
-        items.forEach(item -> totalPrice.addAndGet((int) item.getPrice()));
-        return totalPrice.intValue();
+        //AtomicInteger totalPrice = new AtomicInteger();
+        //items.forEach(item -> totalPrice.addAndGet((int) item.getPrice()));
+        //return totalPrice.intValue();
+        int totalPrice = 0;
+        for (Item item: items) totalPrice += item.getPrice();
+        return totalPrice;
     }
 
 
