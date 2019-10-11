@@ -36,27 +36,10 @@ public class ProblemSolver {
         return solve(items.subList(1, items.size()), knapSackWeight);
     }
 
-
-
-
-
     private int calculateWeight(List<Item> items) {
-//        AtomicInteger totalWeight = new AtomicInteger();
-//        items.forEach(item -> totalWeight.addAndGet(item.getWeight()));
-//        return totalWeight.intValue();
-        int totalWeight = 0;
-        for (Item item: items) totalWeight += item.getWeight();
-        return totalWeight;
+        AtomicInteger totalWeight = new AtomicInteger();
+        items.forEach(item -> totalWeight.addAndGet(item.getWeight()));
+        return totalWeight.intValue();
     }
-
-    private int calculatePrice(List<Item> items) {
-        //AtomicInteger totalPrice = new AtomicInteger();
-        //items.forEach(item -> totalPrice.addAndGet((int) item.getPrice()));
-        //return totalPrice.intValue();
-        int totalPrice = 0;
-        for (Item item: items) totalPrice += item.getPrice();
-        return totalPrice;
-    }
-
 
 }
