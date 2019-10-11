@@ -1,13 +1,13 @@
 package Lesson_5.HomeWork.KnapSack_Problem;
 
-import lombok.Getter;
+import lombok.Data;
 
-@Getter
+@Data
 public class Item {
-    private double price;
+    private int price;
     private int weight;
 
-    public Item(double price, int weight) {
+    public Item(int price, int weight) {
         this.price = price;
         this.weight = weight;
     }
