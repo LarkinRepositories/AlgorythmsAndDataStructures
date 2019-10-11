@@ -32,12 +32,16 @@ public class ProblemSolver {
 
     public List solveKnapSackProblem(List<Item> items, int knapSackWeight) {
         List<Item> itemsToGrab = new ArrayList<>();
+        int bestPrice = calculatePrice(items);
 //        for (int i = 0; i < items.size(); i++) {
 //            if (calculateWeight(items) <= knapSackWeight) {
 //                itemsToGrab.add(items.get(i));
 //            }
         if (items.size() == 0) return itemsToGrab;
-        if (calculateWeight(itemsToGrab) <= knapSackWeight && calculatePrice(itemsToGrab) > calculatePrice(items)) itemsToGrab = items;
+        if (calculateWeight(items) <= knapSackWeight && calculatePrice(items) > bestPrice) {
+            itemsToGrab = items;
+            bestPrice = calculatePrice(items);
+        }
         solveKnapSackProblem(items.subList(0, items.size()-1), knapSackWeight);
         return itemsToGrab;
     }
