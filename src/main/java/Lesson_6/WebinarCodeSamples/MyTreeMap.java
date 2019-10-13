@@ -4,7 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 public class MyTreeMap<Key extends Comparable<Key>, Value> {
-    Node root;
+    private Node root;
 
 
     @Getter
@@ -55,6 +55,45 @@ public class MyTreeMap<Key extends Comparable<Key>, Value> {
         return node;
     }
 
+    private String toString(Node node) {
+        if (node == null) return "";
+        return toString(node.left) +" "+ node.key.toString() + "="+node.value.toString() + " " +toString(node.right);
+    }
+
+    private Node min(Node node) {
+        if (node == null) return node;
+        return min(node.left);
+    }
+
+    private Node max(Node node) {
+        if (node == null) return node;
+        return max(node.right);
+    }
+
+    private Node removeMin(Node node) {
+        if (node.left == null) return node.right;
+        node.left = removeMin(node.left);
+        node.setSize(internalSize(node.left) + internalSize(node.right) + 1);
+        return node;
+    }
+
+    private Node remove(Node node, Key key) {
+        if (node == null) return null;
+        int compare = key.compareTo(node.key);
+        if (compare < 0) node.left = remove(node.left, key);
+        else if (compare > 0) node.right = remove(node.right, key);
+        else {
+            if (node.left == null) return node.right;
+            if (node.right == null) return node.left;
+            Node temp = node;
+            node = min(node.right);
+            node.left = temp.left;
+            node.right = removeMin(temp.right);
+        }
+        node.setSize(internalSize(node.left) + internalSize(node.right) + 1);
+        return  node;
+    }
+
     public int size() {
         return internalSize(root);
     }
@@ -73,9 +112,21 @@ public class MyTreeMap<Key extends Comparable<Key>, Value> {
 
     public void put(Key key, Value value) {
         notNull(key);
-        if (value == null) //remove(key);
+        if (value == null) {} //remove(key);
         root = put(root, key, value);
     }
 
+    public Key minKey() {
+        return min(root).getKey();
+    }
 
+    public void remove(Key key) {
+        notNull(key);
+        remove(root, key);
+    }
+
+    @Override
+    public String toString() {
+        return toString(root);
+    }
 }
