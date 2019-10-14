@@ -29,7 +29,7 @@ public class HomeWorkMain {
             }
         }
 
-        System.out.printf("Percentage of balanced trees is: %s", calculateUnbalancedTreesPercentage(myTreeMapList));
+        System.out.printf("Percentage of unbalanced trees is: %s", calculateUnbalancedTreesPercentage(myTreeMapList));
 
     }
 
