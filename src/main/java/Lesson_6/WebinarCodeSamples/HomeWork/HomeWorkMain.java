@@ -10,8 +10,10 @@ package Lesson_6.WebinarCodeSamples.HomeWork;
 import Lesson_6.WebinarCodeSamples.MyTreeMap;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class HomeWorkMain {
     private static final int DEPTH = 6;
@@ -22,12 +24,19 @@ public class HomeWorkMain {
 
         for (int i = 0; i < TREES_COUNT; i++ ) {
             myTreeMapList.add(new MyTreeMap<Integer, Integer>());
-            for (int j = 0; myTreeMapList.get(i).getDepth() < DEPTH; j++ ) {
+            while (myTreeMapList.get(i).getDepth() < DEPTH) {
                 myTreeMapList.get(i).put(new Random().nextInt(100), new Random().nextInt(100));
             }
         }
-//        myTreeMapList.forEach(e -> System.out.println(e.getDepth()));
-//        myTreeMapList.forEach(e -> System.out.println(e.toString()));
 
+        System.out.printf("Percentage of balanced trees is: %s", calculateUnbalancedTreesPercentage(myTreeMapList));
+
+    }
+
+    private static int calculateUnbalancedTreesPercentage(List<MyTreeMap> list) {
+        AtomicInteger counter = new AtomicInteger();
+        list.forEach(e -> { if (!e.isBalanced()) counter.incrementAndGet(); });
+        if (counter.intValue() == 0) return 0;
+        return list.size() / counter.intValue() * 100;
     }
 }

@@ -101,6 +101,16 @@ public class MyTreeMap<Key extends Comparable<Key>, Value> {
         return Math.max(getDepth(node.left), getDepth(node.right)) + 1;
     }
 
+    private int isBalanced(Node node) {
+        if (node == null) return 0;
+        int left = isBalanced(node.left);
+        if (left == -1) return -1;
+        int right = isBalanced(node.right);
+        if (right == -1) return -1;
+        if (Math.abs(left - right) > 1) return -1;
+        else return 1 + Math.max(left, right);
+    }
+
     public int size() {
         return internalSize(root);
     }
@@ -134,6 +144,10 @@ public class MyTreeMap<Key extends Comparable<Key>, Value> {
 
     public int getDepth() {
         return getDepth(root);
+    }
+
+    public boolean isBalanced() {
+        return isBalanced(root) != -1;
     }
 
     @Override
