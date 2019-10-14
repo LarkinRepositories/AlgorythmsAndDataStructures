@@ -16,5 +16,7 @@ public class MyTreeMapMain {
         System.out.println(myTreeMap.get(3));
         myTreeMap.remove(3);
         System.out.println(myTreeMap.toString());
+        System.out.println(myTreeMap.size());
+        System.out.println(myTreeMap.getDepth());
     }
 }

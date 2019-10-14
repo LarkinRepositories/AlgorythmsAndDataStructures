@@ -16,11 +16,13 @@ public class MyTreeMap<Key extends Comparable<Key>, Value> {
         private Node right;
         @Setter
         private  int size;
+        private int depth;
 
         Node(Key key, Value value) {
             this.key = key;
             this.value = value;
             size = 1;
+            depth = 0;
         }
 
 
@@ -56,7 +58,7 @@ public class MyTreeMap<Key extends Comparable<Key>, Value> {
     }
 
     private String toString(Node node) {
-        if (node == null) return "";
+        if (node == null) return " ";
         return toString(node.left) +" "+ node.key.toString() + "="+node.value.toString() + " " +toString(node.right);
     }
 
@@ -94,6 +96,11 @@ public class MyTreeMap<Key extends Comparable<Key>, Value> {
         return  node;
     }
 
+    private int getDepth(Node node) {
+        if (node == null) return 0;
+        return Math.max(getDepth(node.left), getDepth(node.right)) + 1;
+    }
+
     public int size() {
         return internalSize(root);
     }
@@ -112,7 +119,7 @@ public class MyTreeMap<Key extends Comparable<Key>, Value> {
 
     public void put(Key key, Value value) {
         notNull(key);
-        if (value == null) {} //remove(key);
+        if (value == null) { remove(key); }
         root = put(root, key, value);
     }
 
@@ -123,6 +130,10 @@ public class MyTreeMap<Key extends Comparable<Key>, Value> {
     public void remove(Key key) {
         notNull(key);
         remove(root, key);
+    }
+
+    public int getDepth() {
+        return getDepth(root);
     }
 
     @Override
