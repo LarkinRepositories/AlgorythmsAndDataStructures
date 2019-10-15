@@ -37,6 +37,6 @@ public class HomeWorkMain {
         AtomicInteger counter = new AtomicInteger();
         list.forEach(e -> { if (!e.isBalanced()) counter.incrementAndGet(); });
         if (counter.intValue() == 0) return 0;
-        return list.size() / counter.intValue() * 100;
+        return counter.intValue() / list.size() * 100;
     }
 }
