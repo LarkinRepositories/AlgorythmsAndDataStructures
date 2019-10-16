@@ -7,6 +7,7 @@ public class Main {
         graph.addEdge(0,4);
         graph.addEdge(1,4);
         System.out.println(graph.toString());
-        System.out.println(graph.getAdjList());
+        System.out.println(graph.getAdjList(1));
+        DeepFirstSearch dfs = new DeepFirstSearch(graph, 0);
     }
 }
