@@ -136,6 +136,10 @@ public class MyTreeMap<Key extends Comparable<Key>, Value> {
         return getDepth(root);
     }
 
+    public boolean isBalanced() {
+        return false;
+    }
+
     @Override
     public String toString() {
         return toString(root);
