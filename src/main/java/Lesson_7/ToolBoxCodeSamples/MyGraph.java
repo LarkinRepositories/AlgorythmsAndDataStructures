@@ -23,8 +23,8 @@ public class MyGraph {
         }
     }
 
-    public LinkedList getAdjList(int edge) {
-        return (LinkedList) adjList.get(edge).clone();
+    public LinkedList<Integer> getAdjList(int edge) {
+        return (LinkedList<Integer>) adjList.get(edge).clone();
     }
 
     public void addEdge(int vertex1, int vertex2) {
