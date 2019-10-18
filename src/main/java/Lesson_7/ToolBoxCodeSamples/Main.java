@@ -14,8 +14,8 @@ public class Main {
         System.out.println(dfs.hasPathTo(1));
         System.out.println(dfs.pathTo(3));
         BreadthFirstSearch bfs = new BreadthFirstSearch(graph, 0);
-//        System.out.println(bfs.hasPathTo(7));
-//        System.out.println(bfs.hasPathTo(6));
-//        System.out.println(bfs.pathTo(3));
+        System.out.println(bfs.hasPathTo(7));
+        System.out.println(bfs.hasPathTo(6));
+        System.out.println(bfs.pathTo(3));
     }
 }
