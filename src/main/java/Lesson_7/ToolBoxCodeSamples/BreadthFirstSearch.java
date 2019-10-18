@@ -2,7 +2,6 @@ package Lesson_7.ToolBoxCodeSamples;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
 
 public class BreadthFirstSearch {
     private boolean[] marked;
@@ -31,6 +30,7 @@ public class BreadthFirstSearch {
 
 
     public BreadthFirstSearch(MyGraph g, int startPoint) {
+        marked = new boolean[g.getVertexes()];
         this.startPoint = startPoint;
         edges = new int[g.getVertexes()];
         distances = new int[g.getVertexes()];
