@@ -54,11 +54,11 @@ public class ChainingHashMap<Key, Value> {
         size++;
     }
 
-//    public void remove(Key key) {
-//        isKeyNotNull(key);
-//        int i = hash(key);
-//        ListIterator<Key> iterator = nodes[i].listIterator()
-//    }
+    public void remove(Key key) {
+        isKeyNotNull(key);
+        int i = hash(key);
+        nodes[i].removeIf(node -> node.key.equals(key));
+    }
 
     public Value get(Key key) {
         isKeyNotNull(key);

@@ -10,5 +10,7 @@ public class Main {
         map.put(15, "fiftheen");
 
         System.out.println(map);
+        map.remove(12);
+        System.out.println(map);
     }
 }
